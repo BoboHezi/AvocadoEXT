@@ -1,6 +1,5 @@
 chrome.runtime.onInstalled.addListener(function() {
 	chrome.storage.sync.set({color: '#3aa757'}, function() {
-		console.log("The color is green.");
 		ajaxRequest(cssUrl, function(result) {
 			cssString = result;
 		});
@@ -25,6 +24,11 @@ chrome.runtime.onInstalled.addListener(function() {
 		title: "Please click me!",
 		onclick: function() {alert("oh yeah, just like that.")}
 	});
+});
+
+chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
+	console.log(request, sender, sendResponse);
+	sendResponse('This is background.js, we heared you.');
 });
 
 function calculate(var1, var2) {

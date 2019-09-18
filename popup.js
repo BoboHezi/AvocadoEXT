@@ -25,4 +25,8 @@ chrome.storage.sync.get('color', function(data) {
 	var style = document.createElement('style');
 	style.innerHTML = bg.getCssString();
 	document.head.appendChild(style);
+
+	chrome.runtime.sendMessage({greeting: 'This is popup.js, can you hear me?'}, function(response) {
+		console.log('message from bg: ' + response);
+	});
 });

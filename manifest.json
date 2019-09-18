@@ -7,7 +7,7 @@
     	"activeTab",
     	"declarativeContent",
     	"webRequest",
-		  "webRequestBlocking",
+		"webRequestBlocking",
     	"storage",
     	"contextMenus",
     	"https://raw.githubusercontent.com/BoboHezi/"
@@ -30,12 +30,11 @@
     	"http://www.google.com/"
     ],
     "background": {
-      "scripts": ["background.js"],
-      "persistent": true
+      "scripts": ["background.js"]
     },
     "options_page": "options.html",
     "page_action": {
-      "default_popup": "avocado/index.html",
+      "default_popup": "popup.html",
       "default_title": "Avocado Eli",
       "default_icon": {
         "16": "images/get_started16.png",
